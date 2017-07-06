@@ -142,7 +142,7 @@ gulp.task('copy', function() {
 /* ============ Clean Build Folder And Minified Scripts and Styles =============== */
 
 
-gulp.task('clean', ['cleanTests'], function() {
+gulp.task('clean', function() {
     del([
         'dist',
         config.scriptsFolder + '/' + config.scripts.scriptConcatOutputFile,
@@ -153,50 +153,6 @@ gulp.task('clean', ['cleanTests'], function() {
         config.cssFolder + '/style.css',
         'app/assets/**/*.map'
     ]);
-});
-
-
-/* ============ Run Automated Tests ============ */
-
-
-gulp.task('cleanTests', function() {
-    del([
-        config.testsFolder + '/*.*',
-        config.qunitFolder + '/app/**/*',
-        config.qunitFolder + '/lib/**/*',
-        'qunit-coverage.xml'
-    ]);
-});
-
-gulp.task('copyAppToTest', function() {
-    return gulp.src(config.scriptsFolder + '/**/*')
-    .pipe(gulp.dest(config.qunitFolder + '/app/assets/js'));
-});
-
-gulp.task('copyQunitSupportFiles', function() {
-    return gulp.src([
-        'node_modules/qunitjs/qunit/qunit.css',
-        'node_modules/qunitjs/qunit/qunit.js',
-        'node_modules/qunit-reporter-junit/qunit-reporter-junit.js',
-        'node_modules/qunit-reporter-lcov/qunit-reporter-lcov.js',
-        'node_modules/blanket/dist/qunit/blanket.min.js'
-    ])
-    .pipe(gulp.dest(config.qunitFolder + '/lib'));
-});
-
-gulp.task('testQunit', ['copyAppToTest', 'copyQunitSupportFiles'], function() {
-    return gulp.src(config.qunitFolder + '/runner.html')
-    .pipe(qunit({
-        runner: config.qunitFolder + '/runner-json.js'
-    }));
-});
-
-gulp.task('testQunitCoverage', ['testQunit'], shell.task([
-    'python -m lcov_cobertura ' + config.testsFolder + '/qunit.lcov -o qunit-coverage.xml'
-]));
-
-gulp.task('test', ['testQunitCoverage'], function() {
-    return null; // is this right?
 });
 
 /* ============ Build Project =============== */

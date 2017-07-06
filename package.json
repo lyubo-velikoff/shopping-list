@@ -1,6 +1,6 @@
 {
   "name": "workflow",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "description": "Workflow Continuous Integration",
   "main": "gulpfile.js",
   "dependencies": {
@@ -18,7 +18,6 @@
     "gulp-imagemin": "*",
     "gulp-notify": "*",
     "gulp-prettyerror": "*",
-    "gulp-qunit": "^1.5.0",
     "gulp-rename": "*",
     "gulp-sass": "*",
     "gulp-shell": "*",
@@ -27,24 +26,12 @@
     "gulp-util": "*",
     "ngrok": "*",
     "psi": "*",
-    "qunit-reporter-junit": "^1.1.0",
-    "qunit-reporter-lcov": "^1.0.2",
-    "qunitjs": "^2.0.1",
     "run-sequence": "*",
     "vinyl-ftp": "*"
   },
   "scripts": {
-    "globalInstall": "npm i -g gulp && pip install lcov_cobertura",
+    "globalInstall": "npm i -g gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://whitebookie@bitbucket.org/cefar-ltd/workflow.git"
-  },
-  "keywords": [
-    "workflow"
-  ],
-  "author": "dev@cefar",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/cefar-ltd/workflow#readme"
+  "author": "lyubo"
 }
