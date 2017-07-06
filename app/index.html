@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+
+    <link type="text/css" rel="stylesheet" href="assets/css/app.min.css">
+
+
+</head>
+<body>
+    <div class="body-content">
+
+        <div class="container">
+
+            <div class="box white-bg login-box">
+                <div class="title">Authenticate</div>   
+                
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+
+                <a href="#" id="login-button" class="btn">Log in</a>
+                <a href="#" id="sign-button" class="btn">Sign in</a>
+                <a href="#" id="logout-button" class="btn hide">Log out</a>
+
+            </div>
+
+    
+        </div>
+
+    </div> <!-- ends body content -->
+
+    <!-- load scripts after the page loads, significantly increases the page speed -->
+    <script type="text/javascript">
+
+        function downloadJSAtOnload() {
+            var element = document.createElement("script");
+            element.src = "assets/js/app.min.js";
+            document.body.appendChild(element);
+        }
+        if (window.addEventListener) 
+            window.addEventListener("load", downloadJSAtOnload, false);
+        else if (window.attachEvent)
+        window.attachEvent("onload", downloadJSAtOnload);
+        else window.onload = downloadJSAtOnload;
+    </script>
+
+</body>
+</html>
