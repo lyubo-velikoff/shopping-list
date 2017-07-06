@@ -1,0 +1,89 @@
+@import '_constants';
+
+@each $colour, $code in $colours {
+    .#{$colour}{color: $code !important;}
+    .#{$colour}-bg{background-color: $code !important;}
+    .#{$colour}-bd{border-color: $code !important;}
+    .btn.#{$colour}-bd:hover{background-color: $code;border-color: $code;color: black;}
+}
+
+@each $size in (11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 25, 27, 29, 31, 38, 39, 41, 43, 45) {
+    .s#{$size} {
+        font-size: #{$size}px;
+        line-height: $size + 3px;
+    }
+}
+
+@each $margin in (4, 5, 10, 20,25, 30, 40, 50, 60) {
+    .mt#{$margin} {margin-top: #{$margin}px;}
+    .mr#{$margin} {margin-right: #{$margin}px;}
+    .nmt#{$margin} {margin-top: -#{$margin}px;}
+    .mb#{$margin} {margin-bottom: #{$margin}px;}
+    .ml#{$margin} {margin-left: #{$margin}px;}
+    .nml#{$margin} {margin-left: -#{$margin}px;}
+
+    @media(min-width: 992px) {
+        .md-mr#{$margin} {margin-right: #{$margin}px;}
+    }
+}
+
+@each $padding in (5, 10, 20, 25, 30, 40, 50, 60) {
+    .p#{$padding} {padding: #{$padding}px;}
+    .ptb#{$padding} {padding: #{$padding}px 0;}
+    .pr#{$padding} {padding-right: #{$padding}px;}
+    .pl#{$padding} {padding-left: #{$padding}px;}
+    .pb#{$padding} {padding-bottom: #{$padding}px;}
+    .pt#{$padding} {padding-top: #{$padding}px;}
+}
+
+@each $weight in (1, 2, 3, 5, 6, 7, 9) {
+    .w#{$weight} { font-weight: $weight * 100; }
+}
+
+@each $width in (300, 500) {
+    .w-#{$width} { width: #{$width}px; }
+    .max-w-#{$width} { max-width: #{$width}px; }
+    .min-w-#{$width} { max-width: #{$width}px; }
+}
+@each $height in (50, 90, 190) {
+    .h-#{$height} { height: #{$height}px; }
+    .max-h-#{$height} { max-height: #{$height}px; }
+    .min-h-#{$height} { min-height: #{$height}px; }
+}
+
+.tal { text-align: left; }
+.tac { text-align: center; }
+.tar { text-align: right; }
+
+.db {display: block;}
+
+.ttuc { text-transform: uppercase; }
+
+.left { float: left; }
+.right { float: right; }
+
+.clearfix::after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.container {
+    max-width: 1195px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.mauto {margin: 0 auto;}
+
+body {
+    font-family: $font1; 
+    margin: 0; padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+    background: $lgrey;
+}

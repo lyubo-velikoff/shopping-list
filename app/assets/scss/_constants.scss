@@ -1,0 +1,19 @@
+/* Colours */
+$colours: (
+    'white': #ffffff,
+    'black' : #000000,
+    'orange': #f45d22,
+    'red': #f45d22,
+    'lgrey': #F0F0F0 ,
+    'lblack' : #66757f,
+);
+
+$black: map-get($colours, 'black');
+$white: map-get($colours, 'white');
+$orange: map-get($colours, 'orange');
+$red: map-get($colours, 'red');
+$lgrey: map-get($colours, 'lgrey');
+$lblack: map-get($colours, 'lblack');
+
+$font1: "Arial, sans-serif";
+

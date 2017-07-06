@@ -1,0 +1,12 @@
+*.map
+dist
+node_modules
+app/assets/css/app*
+app/assets/css/style*
+app/assets/css/grid.css
+app/assets/js/app*
+tests/*.*
+tests/qunit/lib
+tests/qunit/app
+qunit-coverage.xml
+config.js
